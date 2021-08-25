@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="cron_job:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cron_job_jar</output-path>
+    <root id="archive" name="cron_job.jar">
+      <element id="module-output" name="cron_job" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.23.jar" path-in-jar="/" />
+      <element id="library" level="project" name="jdbc" />
+    </root>
+  </artifact>
+</component>
