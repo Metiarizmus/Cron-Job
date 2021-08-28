@@ -1,8 +1,9 @@
 package get_inf_for_cron;
 
 import Entity.User;
-import service.UserJDBCImpl;
+import serviceJDBC.UserJDBC;
 
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -10,7 +11,15 @@ import java.util.*;
 //names of users that logged in it system last 5 hours, count of users more than I years, users that registered today
 public class InfForStatistic {
 
-    private final List<User> users = new UserJDBCImpl().getAllUsers();
+    private List<User> users = null;
+
+    {
+        try {
+            users = new UserJDBC().selectQuery(Entity.User.class);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
     private Date timeNow() throws ParseException {
         SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

@@ -20,6 +20,7 @@ public class DAOFactory {
     }
 
     private DAOFactory() {
+
         try {
             this.connection = DriverManager.getConnection(URL,LOGIN,PASSWORD);
         } catch (SQLException throwables) {
@@ -45,21 +46,6 @@ public class DAOFactory {
             }
         }
         return instance;
-    }
-
-    public static void closeConnection(Connection connection) throws SQLException {
-        try
-        {
-            if(connection!=null && (!(connection.isClosed())))
-            {
-                System.out.println ("Closing connection: " + connection + "\n");
-                connection.close();
-                System.out.println ("Closed!\n");
-            }
-        }
-        catch(SQLException e) {
-            throw e;
-        }
     }
 
 }

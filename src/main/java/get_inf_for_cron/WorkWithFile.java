@@ -29,6 +29,7 @@ public class WorkWithFile {
                 oos.writeObject(q);
             }
 
+            System.out.println("all good");
             oos.close();
             fos.close();
         } catch (IOException | ParseException e) {
